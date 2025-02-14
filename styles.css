@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    margin: 0;
+    flex-direction: column;
+    font-family: 'Georgia', serif;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stem {
+    width: 5px;
+    height: 0;
+    background-color: green;
+    position: relative;
+    animation: growStem 3s ease-in-out forwards;
+}
+
+@keyframes growStem {
+    from {
+        height: 0;
+    }
+    to {
+        height: 150px;
+    }
+}
+
+.leaf {
+    width: 20px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+    bottom: 50px;
+    left: -10px;
+    border-radius: 50%;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: growLeaf 2s ease-in 2.5s forwards;
+}
+
+@keyframes growLeaf {
+    from {
+        opacity: 0;
+        transform: scale(0) rotate(30deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(30deg);
+    }
+}
+
+.flower {
+    position: relative;
+    top: -10px;
+    opacity: 0;
+    animation: bloom 2s ease-in-out 3s forwards;
+}
+
+@keyframes bloom {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.petal {
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.petal1 { top: -20px; left: 0; }
+.petal2 { top: 0; left: -20px; }
+.petal3 { top: 0; right: -20px; }
+.petal4 { top: 20px; left: 0; }
+
+.center {
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.message {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
